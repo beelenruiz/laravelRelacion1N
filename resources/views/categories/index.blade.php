@@ -21,10 +21,10 @@ Categorias
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-purple-800 uppercase bg-purple-300 dark:bg-purple-700 dark:text-white">
                 <tr>
-                    <th scope="col" class="font-bold px-6 py-3">
+                    <th scope="col" class="font-bold px-6 py-3 w-1/4">
                         CATEGORÍA
                     </th>
-                    <th scope="col" class="font-bold px-6 py-3">
+                    <th scope="col" class="font-bold px-6 py-3 w-1/3">
                         COLOR
                     </th>
                     <th scope="col" class="font-bold px-6 py-3">
@@ -49,13 +49,17 @@ Categorias
                         <form action="{{route('categories.destroy', $item)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                            <a href="{{route('categories.edit', $item)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                            <a href="{{route('categories.edit', $item)}}" class="mr-4 font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 editar
                             </a>
 
-                            <button type="submit" class="ml-4 font-medium text-red-600 dark:text-red-500 hover:underline">
+                            <button type="submit" class="mr-4 font-medium text-red-600 dark:text-red-500 hover:underline">
                                 borrar
                             </button>
+
+                            <a href="{{route('products.show', $item -> id)}}" class="font-medium text-purple-600 dark:text-purple-500 hover:underline">
+                                mostrar productos
+                            </a>
                         </form>
                     </td>
                 </tr>

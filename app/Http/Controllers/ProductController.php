@@ -36,7 +36,7 @@ class ProductController extends Controller
         Product::create([
             'nombre' => $request -> nombre,
             'descripcion' => $request -> descripcion,
-            'imagen' => ($request -> imagen) ? $request -> imagen -> store('images') : 'images/default.jpg',
+            'imagen' => ($request -> imagen) ? $request -> imagen -> store('images') : 'images/defaultimage.jpg',
             'stock' => $request -> stock,
             'category_id' => $request -> category_id,
         ]);
@@ -46,9 +46,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(int $category)
     {
-        //
+        $productos = Product::where('category_id', $category) -> orderBy('nombre') -> paginate(6);
+        return view('products.index', compact('productos'));
     }
 
     /**
