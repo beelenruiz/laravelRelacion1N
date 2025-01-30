@@ -90,7 +90,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        Storage::delete($product -> imagen);
+        if(basename($product->imagen)!='defaultimage.jpg') Storage::delete($product->imagen);
         $product -> delete();
         return redirect() -> route('products.index') -> with('mensaje', 'Producto eliminado');
     }
