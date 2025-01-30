@@ -1,4 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# <div align="center"> ✧ Proyecto Laravel - CRUD de Productos ✧ <br>
+### <div align="center"> - Belén Ruiz Morales - </div>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -7,60 +9,109 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## 📝 Descripción del Proyecto
+Este proyecto es una aplicación CRUD para la gestión de productos y categorías, desarrollada con Laravel. Permite crear, editar y eliminar productos, asignándolos a una categoría específica. Incluye una interfaz responsiva con Blade y Tailwind CSS, además de alertas dinámicas con SweetAlert. El objetivo es demostrar el uso de relaciones 1:N.
+<br><br>
+![image](https://github.com/user-attachments/assets/8641522c-05ab-4896-986a-32804ccd465d)
+<br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 💻 Desarrollo del Proyecto 
+1. Laravel como framework principal para la estructura y lógica.
+2. SQLite como base de datos por defecto en el entorno de desarrollo.
+3. Factories y Seeders con Faker para la generación de datos de prueba.
+4. Blade como motor de pantillas para las vistas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🛠️ Lenguajes y Tecnologías
+- **PHP:** Lenguaje principal.
+- **Laravel:** Framework de desarrollo.
+- **SQLite:** Base de Datos.
+- **Blade:** Plantillas para las vistas.
+- **Tailwind CSS:** Encargado de diseño visual y estilos responsivos.
+- **SweetAlert:** Notificaciones.
+- **Font Awesome:** Iconos.
+<br><br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##  📂 Estructura del proyecto
+```
+├── app/
+│   ├── Http/Controllers/        # Controladores
+│   ├── Models/                  # Modelos de base de datos
+|
+├── database/
+│   ├── migrations/              # Migraciones de base de datos
+│   ├── seeders/                 # Generación de datos
+│   ├── factories/
+|
+├── public/storage
+│   ├── images                   # Imagenes de los productos
+|
+├── resources/
+│   ├── views/
+│       ├── categories/          # Vistas relacionadas con categorías
+│       │   ├── create.blade.php 
+│       │   ├── edit.blade.php   
+│       │   └── index.blade.php  
+│       ├── components/          # Componentes reutilizables
+│       │   ├── alerta.blade.php # Alertas con SweetAlert
+│       │   ├── barra-nav.blade.php # Barra de navegación
+│       │   └── error.blade.php  # Manejo de errores
+│       ├── plantillas/
+│       │   └── plantilla.blade.php # Plantilla principal
+│       ├── products/            # Vistas relacionadas con productos
+│       │   ├── create.blade.php 
+│       │   ├── edit.blade.php   
+│       │   └── index.blade.php  
+|       
+├── routes/
+│   ├── web.php                  # Rutas web
+```
 
-## Learning Laravel
+## 📖 Instalación y Configuración
+```
+# Clonar el repositorio
+git clone https://github.com/usuario/proyecto-laravel.git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Ingresar al directorio del proyecto
+cd proyecto-laravel
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+# Instalar dependencias
+composer install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Configurar variables de entorno
+cp .env.example .env
 
-## Laravel Sponsors
+# Generar clave de la aplicación
+php artisan key:generate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Ejecutar migraciones y seeders para generar datos iniciales
+php artisan migrate --seed
 
-### Premium Partners
+# Iniciar el servidor de desarrollo
+php artisan serve
+```
+Accede al proyecto en tu navegador en la dirección http://localhost:8000/categories.
+<br><br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 📸 Imágenes
+<img src="https://github.com/user-attachments/assets/45626bbc-ed20-4333-ad4c-9d164441263b" style="width: 49%; margin: 0 auto;">
+<img src="https://github.com/user-attachments/assets/318e3baa-fdf4-46ea-8b09-8aa00f428b7d" style="width: 49%; margin: 0 auto;">
 
-## Contributing
+![image](https://github.com/user-attachments/assets/75437ffd-565e-415b-9f4c-260fc5a8fccd)
+<img src="https://github.com/user-attachments/assets/5d5b181d-0c93-406b-b753-29b7c25d5d28" style="width: 49%; margin: 0 auto;">
+<img src="https://github.com/user-attachments/assets/2e4a3ab3-bbce-46d6-b59c-609f93934a85" style="width: 50%; margin: 0 auto;">
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![image](https://github.com/user-attachments/assets/957cca83-91f9-4b4b-8a78-dc643aac8411)
+<br><br>
 
-## Code of Conduct
+## 📋 Adicional
+- Las imágenes en los productos son opcionales. Si no se sube ninguna, se asigna una imagen por defecto.
+- No hay autenticación ni filtros avanzados, solo la funcionalidad CRUD básica requerida.
+- Se puede visualizar todos los productos de una categoría específica desde la tabla de categorías.
+- Puedes agregar funcionalidades como filtros y búsquedas para extender el proyecto.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 👥 Autora
+**Belén Ruiz Morales**,  Estudiante de 2º DAW.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### ✉ Contacto
+- belenrumo2005@gmail.com
+- [mi perfil de linkedin](https://www.linkedin.com/in/belen-ruiz-499b8b275/)
