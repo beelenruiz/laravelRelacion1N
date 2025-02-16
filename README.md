@@ -69,10 +69,10 @@ Este proyecto es una aplicación CRUD para la gestión de productos y categoría
 ## 📖 Instalación y Configuración
 ```
 # Clonar el repositorio
-git clone https://github.com/usuario/proyecto-laravel.git
+git clone https://github.com/beelenruiz/laravelRelacion1N.git
 
 # Ingresar al directorio del proyecto
-cd proyecto-laravel
+cd laravelRelacion1N
 
 # Instalar dependencias
 composer install
